@@ -90,6 +90,7 @@ import Data.Function   ( on )
 import Data.Monoid     ( Monoid(mempty, mappend)  )
 #elif __GLASGOW_HASKELL__ > 801
 import Prelude hiding ((<>))
+import qualified Data.Semigroup
 #endif
 import Data.String     ( IsString(fromString) )
 

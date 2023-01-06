@@ -254,7 +254,11 @@ data TextDetails a = Chr  {-# UNPACK #-} !Char -- ^ A single Char fragment
 instance Monoid (MDoc a) where
     mempty  = empty
     mappend = (<>)
-
+    
+#if __GLASGOW_HASKELL__ > 801
+instance Semigroup (MDoc a) where
+    (<>) = (<>)
+#endif
 instance IsString (MDoc a) where
     fromString = text
 

@@ -88,6 +88,8 @@ import Control.DeepSeq ( NFData(rnf) )
 import Data.Function   ( on )
 #if __GLASGOW_HASKELL__ < 709
 import Data.Monoid     ( Monoid(mempty, mappend)  )
+#elif __GLASGOW_HASKELL__ > 801
+import Prelude hiding ((<>))
 #endif
 import Data.String     ( IsString(fromString) )
 
